@@ -6,12 +6,16 @@ const vue = new Vue({
       inputType: "",
       countryList: [],
       contryOption: [],
+      countrySelected: "",
     };
   },
   computed: {
     search() {
       return this.wines.filter((wine) => {
-        return wine.name.toLowerCase().includes(this.searchKey.toLowerCase());
+        return ( 
+            wine.name.toLowerCase().includes(this.searchKey.toLowerCase()) &&
+            wine.country.toLowerCase().includes(this.countrySelected.toLowerCase()) 
+        )
       });
     },
   },

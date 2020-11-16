@@ -9,6 +9,7 @@
       <i class="fas fa-globe-europe"></i>
       <select v-show="inputType=='contry'">
         <option value="">Choisissez un pays</option>
+        <option v-for="option in contryOption" :value="option.id"> {{option.name}} </option>
       </select>
     </li>
 

@@ -4,6 +4,11 @@ const vue = new Vue({
             wines:[],
         }
     },
+    methods: {
+        removeItem(id){
+            this.$delete(this.wines, id);
+        }
+    },
     mounted(){
         axios.get("libraries/controllers/getData.php")
         .then((res) => res.data)

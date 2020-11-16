@@ -2,6 +2,14 @@ const vue = new Vue({
     data: () => {
         return {
             wines:[],
+            searchKey:""
+        }
+    },
+    computed: {
+        search(){
+            return this.wines.filter((wine) => {
+                return wine.name.toLowerCase().includes(this.searchKey.toLowerCase());
+            })
         }
     },
     methods: {

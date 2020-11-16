@@ -1,21 +1,25 @@
 <div class="lobby-container" id="vue-app">
   <ul>
-    <li class="name">
+    <li @click="searchInput('name')" class="name">
       <i class="fas fa-search"></i>
-      <input v-model="searchKey" type="search" class="search" placeholder="Entrez le nom d'un vin...">
+      <input v-if="inputType=='name'" v-model="searchKey" type="search" class="search" placeholder="Entrez le nom d'un vin...">
     </li>
 
-    <li class="country">
+    <li @click="searchInput('contry')" class="country">
       <i class="fas fa-globe-europe"></i>
+      <select v-show="inputType=='contry'">
+        <option value="">Choisissez un pays</option>
+      </select>
     </li>
 
-    <li class="grapes">
+    <li @click="searchInput('grapes')" class="grapes">
       <i class="fas fa-wine-glass-alt"></i>
+      <div v-if="inputType=='grapes'" class="radio-container"></div>
     </li>
   </ul>
-
+  <h1 v-if="inputType==''" class="title">Liste des vins</h1>
   <h3 v-if="search.length == 0">Aucun résultat</h3>
-  
+
   <div class="list-container">
     <div v-for="wine, id in search" :key='id' class="wine-list">
       <div class="wine-card">

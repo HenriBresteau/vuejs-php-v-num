@@ -2,7 +2,8 @@ const vue = new Vue({
     data: () => {
         return {
             wines:[],
-            searchKey:""
+            searchKey:"",
+            inputType:""
         }
     },
     computed: {
@@ -18,6 +19,9 @@ const vue = new Vue({
         },
         getImgUrl(pic){
             return "assets/uploads/"+pic;
+        },
+        searchInput(param){
+            this.inputType = param;
         }
     },
     mounted(){

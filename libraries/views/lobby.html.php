@@ -33,6 +33,7 @@
             </div>
             <p> {{wine.description}} </p>
           </div>
+          <img :src="getImgUrl(wine.picture)" alt="photo-bouteille">
         </div>
       </div>
     </div>

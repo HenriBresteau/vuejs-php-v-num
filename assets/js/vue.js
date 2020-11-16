@@ -7,6 +7,9 @@ const vue = new Vue({
     methods: {
         removeItem(id){
             this.$delete(this.wines, id);
+        },
+        getImgUrl(pic){
+            return "assets/uploads/"+pic;
         }
     },
     mounted(){

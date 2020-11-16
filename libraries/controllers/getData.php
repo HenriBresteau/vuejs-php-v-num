@@ -5,7 +5,7 @@ $model = new Wines();
 
 $sql = $model->list();
 
-var_dump($sql);
+// var_dump(json_encode($sql ->fetchAll()));
 
 echo json_encode($sql ->fetchAll());
 

@@ -31,8 +31,8 @@
   <h1 v-if="inputType==''" class="title">Liste des vins</h1>
   <h3 v-if="search.length == 0">Aucun résultat</h3>
 
-  <div class="list-container">
-    <div v-for="wine, id in search" :key='id' class="wine-list">
+  <transition-group name="item-anim" tag="div" class="list-container">
+    <div v-for="wine, id in search" :key='wine.id' class="wine-list">
       <div class="wine-card">
         <div class="card-header">
           <h2> {{wine.name}} </h2>
@@ -55,5 +55,5 @@
         </div>
       </div>
     </div>
-  </div>
+  </transition-group>
 </div>

@@ -36,6 +36,11 @@ const vue = new Vue({
     searchInput(param) {
       this.inputType = param;
     },
+    cancelSearch(){
+      this.searchKey = "";
+      this.countrySelected = "";
+      this.grapesSelected = "";
+    }
   },
   mounted() {
     axios

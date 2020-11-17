@@ -1,4 +1,9 @@
 <div class="lobby-container" id="vue-app">
+  <div @click="cancelSearch" v-if="searchKey || countrySelected || grapesSelected" class="cancel">
+    <h5>Annuler recherche</h5>
+    <i class="fas fa-times"></i>
+  </div>
+
   <ul>
     <li @click="searchInput('name')" class="name">
       <i class="fas fa-search"></i>

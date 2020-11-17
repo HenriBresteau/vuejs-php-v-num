@@ -302,3 +302,16 @@
     }
   }
 }
+// Anim VUE
+.item-anim {
+  &-enter-active,
+  &-leave-active {
+    opacity: 1;
+    transition: .8s;
+  }
+  &-enter,
+  &-leave-to {
+    opacity: 0;
+    transition: .1s;
+  }
+}
